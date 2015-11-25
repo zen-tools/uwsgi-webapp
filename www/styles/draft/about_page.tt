@@ -1,0 +1,4 @@
+[% PROCESS "overall_header.tt" %]
+<h1>[% message %]</h1>
+[% PROCESS "overall_footer.tt" %]
+
