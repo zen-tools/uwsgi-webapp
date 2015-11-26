@@ -1,1 +1,1 @@
-Dependencies uwsgi nginx libtemplate-perl libplack-perl
+Dependencies: uwsgi nginx libtemplate-perl libplack-perl
