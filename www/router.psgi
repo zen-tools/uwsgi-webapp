@@ -4,11 +4,15 @@ use warnings;
 
 use Plack::Request;
 use App::Control::Home;
+use App::Control::Product;
+use App::Control::Contact;
 use App::Control::About;
 
 my %ROUTING = (
-    '/'      => App::Control::Home->new(),
-    '/about' => App::Control::About->new(),
+    '/'        => App::Control::Home->new(),
+    '/product' => App::Control::Product->new(),
+    '/contact' => App::Control::Contact->new(),
+    '/about'   => App::Control::About->new(),
 );
 
 
