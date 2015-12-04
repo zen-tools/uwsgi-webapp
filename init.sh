@@ -3,7 +3,7 @@
 BASE_DIR="$(dirname "$(readlink -f $0)" )";
 
 export PERL5LIB="$PERL5LIB:$BASE_DIR/www/lib";
-export PATH="$PATH:/usr/sbin:$BASE_DIR/sbin/$(arch)";
+export PATH="/usr/sbin:$BASE_DIR/sbin/$(arch):$PATH";
 
 NGINX_PREFIX="$BASE_DIR/proxy/";
 NGINX_CONF="${NGINX_PREFIX}/conf/nginx.conf";

@@ -15,7 +15,6 @@ my %ROUTING = (
     '/about'   => App::Control::About->new(),
 );
 
-
 my $app = sub {
     my $env = shift;
 
