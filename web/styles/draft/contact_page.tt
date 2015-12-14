@@ -24,7 +24,7 @@
                   </div>
                   <div class="s-12 l-6">
                      <h2>Example contact form (do not use)</h2>
-                     <form class="customform" action="">
+                     <form class="customform" action="/contact" method="post">
                         <div class="s-12 l-7"><input name="" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
                         <div class="s-12 l-7"><input name="" placeholder="Your name" title="Your name" type="text" /></div>
                         <div class="s-12"><textarea placeholder="Your massage" name="" rows="5"></textarea></div>

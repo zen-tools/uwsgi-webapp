@@ -4,12 +4,14 @@ use Scalar::Util qw(blessed);
 
 sub new {
     my $class = shift;
+    my %args = @_;
 
     # Initialize with default values
     my $self = {
         'status-code' => 200,
         'content-type' => 'text/html',
         'html' => '',
+        'webroot' => $args{webroot},
     };
     bless $self, $class;
 
@@ -45,15 +47,15 @@ sub run {
     ];
 }
 
-sub process_template {
+sub render {
     my ($self, %args) = @_;
 
     die("What is template file name?") unless $args{template};
 
     my $buffer = '';
     my $template = Template->new(
-        INCLUDE_PATH => './www/styles/draft/',
-        OUTPUT_PATH  => './cache',
+        INCLUDE_PATH => $self->{webroot} . '/styles/draft/',
+        OUTPUT_PATH  => $self->{webroot} . '/../cache',
     );
 
     $template->process(

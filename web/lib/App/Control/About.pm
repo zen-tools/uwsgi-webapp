@@ -5,7 +5,7 @@ use base ( "App::Control" );
 sub handler {
     my ($self, $r) = @_;
 
-    $self->process_template(
+    $self->render(
         template => 'about_page.tt',
         data => {
             title   => "About Us",

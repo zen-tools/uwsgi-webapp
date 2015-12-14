@@ -2,7 +2,7 @@
 
 BASE_DIR="$(dirname "$(readlink -f $0)" )";
 
-export PERL5LIB="$PERL5LIB:$BASE_DIR/www/lib";
+export PERL5LIB="$PERL5LIB:$BASE_DIR/web/lib";
 export PATH="/usr/sbin:$BASE_DIR/sbin/$(arch):$PATH";
 
 NGINX_PREFIX="$BASE_DIR/proxy/";
@@ -10,7 +10,7 @@ NGINX_CONF="${NGINX_PREFIX}/conf/nginx.conf";
 NGINX_PID="$BASE_DIR/logs/nginx.pid";
 
 UWSGI_PASS="127.0.0.1:9999";
-UWSGI_MAIN="$BASE_DIR/www/router.psgi";
+UWSGI_MAIN="$BASE_DIR/web/router.psgi";
 UWSGI_LOG="$BASE_DIR/logs/uwsgi.log";
 UWSGI_PID="$BASE_DIR/logs/uwsgi.pid";
 
@@ -50,11 +50,11 @@ function build_configs() {
 
 function sync_static_files() {
     rm -rf "$BASE_DIR"/proxy/public/{css,files,font,img,js,owl-carousel};
-    mkdir -p "$BASE_DIR"/www/static/{css,files,font,img,js,owl-carousel};
+    mkdir -p "$BASE_DIR"/web/static/{css,files,font,img,js,owl-carousel};
     mkdir -p "$BASE_DIR"/proxy/public/{css,files,font,img,js,owl-carousel};
     for dir in css files font img js owl-carousel
     do
-        cp -Tar "$BASE_DIR/www/static/$dir" "$BASE_DIR/proxy/public/$dir" \
+        cp -Tar "$BASE_DIR/web/static/$dir" "$BASE_DIR/proxy/public/$dir" \
             || return 1;
     done
 
